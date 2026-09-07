@@ -1,0 +1,23 @@
+{
+  "name": "rigzipnew",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RigZip full-stack starter (Express API + React/Vite web)",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n server,web -c blue,magenta \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w server && npm run build -w web",
+    "lint": "npm run lint -w server && npm run lint -w web",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web",
+    "start": "npm run start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
